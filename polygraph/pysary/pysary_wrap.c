@@ -557,352 +557,352 @@ char *SWIG_GetPtr(char *_c, void **ptr, char *_t)
 
 #define SWIG_name    "pysary"
 
-#include <sary/saryer.h>
+#include <sary/searcher.h>
 #include <glib.h>
 #include <sary/mmap.h>
 #include <sary/text.h>
 #include <sary/i.h>
 #include <sary/saryconfig.h>
-extern Saryer *saryer_new(const gchar *);
-extern Saryer *saryer_new2(const gchar *,const gchar *);
-extern void saryer_destroy(Saryer *);
-extern gboolean saryer_search(Saryer *,const gchar *);
-extern gboolean saryer_search2(Saryer *,const gchar *,SaryInt );
-extern gboolean saryer_isearch(Saryer *,const gchar *,SaryInt );
-extern void saryer_isearch_reset(Saryer *);
-extern gboolean saryer_icase_search(Saryer *,const gchar *);
-extern gboolean saryer_icase_search2(Saryer *,const gchar *,SaryInt );
-extern SaryText *saryer_get_text(Saryer *);
-extern SaryMmap *saryer_get_array(Saryer *);
-extern SaryInt saryer_get_next_offset(Saryer *);
-extern gchar *saryer_get_next_line(Saryer *);
-extern gchar *saryer_get_next_line2(Saryer *,SaryInt *);
-extern gchar *saryer_get_next_context_lines(Saryer *,SaryInt ,SaryInt );
-extern gchar *saryer_get_next_context_lines2(Saryer *,SaryInt ,SaryInt ,SaryInt *);
-extern gchar *saryer_get_next_tagged_region(Saryer *,const gchar *,const gchar *);
-extern gchar *saryer_get_next_tagged_region2(Saryer *,const gchar *,SaryInt ,const gchar *,SaryInt ,SaryInt *);
-extern SaryText *saryer_get_next_occurrence(Saryer *);
-extern gchar *saryer_peek_next_position(Saryer *);
-extern SaryInt saryer_count_occurrences(Saryer *);
-extern void saryer_sort_occurrences(Saryer *);
-extern void saryer_enable_cache(Saryer *);
-static PyObject *_wrap_saryer_new(PyObject *self, PyObject *args) {
+extern SarySearcher *sary_searcher_new(const gchar *);
+extern SarySearcher *sary_searcher_new2(const gchar *,const gchar *);
+extern void sary_searcher_destroy(SarySearcher *);
+extern gboolean sary_searcher_search(SarySearcher *,const gchar *);
+extern gboolean sary_searcher_search2(SarySearcher *,const gchar *,SaryInt );
+extern gboolean sary_searcher_isearch(SarySearcher *,const gchar *,SaryInt );
+extern void sary_searcher_isearch_reset(SarySearcher *);
+extern gboolean sary_searcher_icase_search(SarySearcher *,const gchar *);
+extern gboolean sary_searcher_icase_search2(SarySearcher *,const gchar *,SaryInt );
+extern SaryText *sary_searcher_get_text(SarySearcher *);
+extern SaryMmap *sary_searcher_get_array(SarySearcher *);
+extern SaryInt sary_searcher_get_next_offset(SarySearcher *);
+extern gchar *sary_searcher_get_next_line(SarySearcher *);
+extern gchar *sary_searcher_get_next_line2(SarySearcher *,SaryInt *);
+extern gchar *sary_searcher_get_next_context_lines(SarySearcher *,SaryInt ,SaryInt );
+extern gchar *sary_searcher_get_next_context_lines2(SarySearcher *,SaryInt ,SaryInt ,SaryInt *);
+extern gchar *sary_searcher_get_next_tagged_region(SarySearcher *,const gchar *,const gchar *);
+extern gchar *sary_searcher_get_next_tagged_region2(SarySearcher *,const gchar *,SaryInt ,const gchar *,SaryInt ,SaryInt *);
+extern SaryText *sary_searcher_get_next_occurrence(SarySearcher *);
+extern gchar *sary_searcher_peek_next_position(SarySearcher *);
+extern SaryInt sary_searcher_count_occurrences(SarySearcher *);
+extern void sary_searcher_sort_occurrences(SarySearcher *);
+extern void sary_searcher_enable_cache(SarySearcher *);
+static PyObject *_wrap_sary_searcher_new(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _result;
+    SarySearcher * _result;
     gchar * _arg0;
     char _ptemp[128];
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_new",&_arg0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_new",&_arg0)) 
         return NULL;
-    _result = (Saryer *)saryer_new(_arg0);
-    SWIG_MakePtr(_ptemp, (char *) _result,"_Saryer_p");
+    _result = (SarySearcher *)sary_searcher_new(_arg0);
+    SWIG_MakePtr(_ptemp, (char *) _result,"_SarySearcher_p");
     _resultobj = Py_BuildValue("s",_ptemp);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_new2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_new2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _result;
+    SarySearcher * _result;
     gchar * _arg0;
     gchar * _arg1;
     char _ptemp[128];
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ss:saryer_new2",&_arg0,&_arg1)) 
+    if(!PyArg_ParseTuple(args,"ss:sary_searcher_new2",&_arg0,&_arg1)) 
         return NULL;
-    _result = (Saryer *)saryer_new2(_arg0,_arg1);
-    SWIG_MakePtr(_ptemp, (char *) _result,"_Saryer_p");
+    _result = (SarySearcher *)sary_searcher_new2(_arg0,_arg1);
+    SWIG_MakePtr(_ptemp, (char *) _result,"_SarySearcher_p");
     _resultobj = Py_BuildValue("s",_ptemp);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_destroy(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_destroy(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_destroy",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_destroy",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_destroy. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_destroy. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    saryer_destroy(_arg0);
+    sary_searcher_destroy(_arg0);
     Py_INCREF(Py_None);
     _resultobj = Py_None;
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_search(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_search(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gboolean  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ss:saryer_search",&_argc0,&_arg1)) 
+    if(!PyArg_ParseTuple(args,"ss:sary_searcher_search",&_argc0,&_arg1)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_search. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_search. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gboolean )saryer_search(_arg0,_arg1);
+    _result = (gboolean )sary_searcher_search(_arg0,_arg1);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_search2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_search2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gboolean  _result;
-    Saryer * _arg0;
-    gchar * _arg1;
-    SaryInt  _arg2;
-    char * _argc0 = 0;
-
-    self = self;
-    if(!PyArg_ParseTuple(args,"ss#:saryer_search2",&_argc0,&_arg1,&_arg2)) 
-        return NULL;
-    if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_search2. Expected _Saryer_p.");
-        return NULL;
-        }
-    }
-    _result = (gboolean )saryer_search2(_arg0,_arg1,_arg2);
-    _resultobj = Py_BuildValue("i",_result);
-    return _resultobj;
-}
-
-static PyObject *_wrap_saryer_isearch(PyObject *self, PyObject *args) {
-    PyObject * _resultobj;
-    gboolean  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     SaryInt  _arg2;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ssi:saryer_isearch",&_argc0,&_arg1,&_arg2)) 
+    if(!PyArg_ParseTuple(args,"ss#:sary_searcher_search2",&_argc0,&_arg1,&_arg2)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_isearch. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_search2. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gboolean )saryer_isearch(_arg0,_arg1,_arg2);
+    _result = (gboolean )sary_searcher_search2(_arg0,_arg1,_arg2);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_isearch_reset(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_isearch(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _arg0;
+    gboolean  _result;
+    SarySearcher * _arg0;
+    gchar * _arg1;
+    SaryInt  _arg2;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_isearch_reset",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"ssi:sary_searcher_isearch",&_argc0,&_arg1,&_arg2)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_isearch_reset. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_isearch. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    saryer_isearch_reset(_arg0);
+    _result = (gboolean )sary_searcher_isearch(_arg0,_arg1,_arg2);
+    _resultobj = Py_BuildValue("i",_result);
+    return _resultobj;
+}
+
+static PyObject *_wrap_sary_searcher_isearch_reset(PyObject *self, PyObject *args) {
+    PyObject * _resultobj;
+    SarySearcher * _arg0;
+    char * _argc0 = 0;
+
+    self = self;
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_isearch_reset",&_argc0)) 
+        return NULL;
+    if (_argc0) {
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_isearch_reset. Expected _SarySearcher_p.");
+        return NULL;
+        }
+    }
+    sary_searcher_isearch_reset(_arg0);
     Py_INCREF(Py_None);
     _resultobj = Py_None;
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_icase_search(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_icase_search(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gboolean  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ss:saryer_icase_search",&_argc0,&_arg1)) 
+    if(!PyArg_ParseTuple(args,"ss:sary_searcher_icase_search",&_argc0,&_arg1)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_icase_search. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_icase_search. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gboolean )saryer_icase_search(_arg0,_arg1);
+    _result = (gboolean )sary_searcher_icase_search(_arg0,_arg1);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_icase_search2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_icase_search2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gboolean  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     SaryInt  _arg2;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ssi:saryer_icase_search2",&_argc0,&_arg1,&_arg2)) 
+    if(!PyArg_ParseTuple(args,"ssi:sary_searcher_icase_search2",&_argc0,&_arg1,&_arg2)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_icase_search2. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_icase_search2. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gboolean )saryer_icase_search2(_arg0,_arg1,_arg2);
+    _result = (gboolean )sary_searcher_icase_search2(_arg0,_arg1,_arg2);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_text(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_text(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     SaryText * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
     char _ptemp[128];
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_get_text",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_get_text",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_text. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_text. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (SaryText *)saryer_get_text(_arg0);
+    _result = (SaryText *)sary_searcher_get_text(_arg0);
     SWIG_MakePtr(_ptemp, (char *) _result,"_SaryText_p");
     _resultobj = Py_BuildValue("s",_ptemp);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_array(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_array(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     SaryMmap * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
     char _ptemp[128];
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_get_array",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_get_array",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_array. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_array. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (SaryMmap *)saryer_get_array(_arg0);
+    _result = (SaryMmap *)sary_searcher_get_array(_arg0);
     SWIG_MakePtr(_ptemp, (char *) _result,"_SaryMmap_p");
     _resultobj = Py_BuildValue("s",_ptemp);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_offset(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_offset(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     SaryInt  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_get_next_offset",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_get_next_offset",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_offset. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_offset. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (SaryInt )saryer_get_next_offset(_arg0);
+    _result = (SaryInt )sary_searcher_get_next_offset(_arg0);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_line(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_line(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_get_next_line",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_get_next_line",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_line. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_line. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_line(_arg0);
+    _result = (gchar *)sary_searcher_get_next_line(_arg0);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_line2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_line2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     SaryInt * _arg1;
     char * _argc0 = 0;
     char * _argc1 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ss:saryer_get_next_line2",&_argc0,&_argc1)) 
+    if(!PyArg_ParseTuple(args,"ss:sary_searcher_get_next_line2",&_argc0,&_argc1)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_line2. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_line2. Expected _SarySearcher_p.");
         return NULL;
         }
     }
     if (_argc1) {
         if (SWIG_GetPtr(_argc1,(void **) &_arg1,"_SaryInt_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 2 of saryer_get_next_line2. Expected _SaryInt_p.");
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 2 of sary_searcher_get_next_line2. Expected _SaryInt_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_line2(_arg0,_arg1);
+    _result = (gchar *)sary_searcher_get_next_line2(_arg0,_arg1);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_context_lines(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_context_lines(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     SaryInt  _arg1;
     SaryInt  _arg2;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"sii:saryer_get_next_context_lines",&_argc0,&_arg1,&_arg2)) 
+    if(!PyArg_ParseTuple(args,"sii:sary_searcher_get_next_context_lines",&_argc0,&_arg1,&_arg2)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_context_lines. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_context_lines. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_context_lines(_arg0,_arg1,_arg2);
+    _result = (gchar *)sary_searcher_get_next_context_lines(_arg0,_arg1,_arg2);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_context_lines2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_context_lines2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     SaryInt  _arg1;
     SaryInt  _arg2;
     SaryInt * _arg3;
@@ -910,51 +910,51 @@ static PyObject *_wrap_saryer_get_next_context_lines2(PyObject *self, PyObject *
     char * _argc3 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"siis:saryer_get_next_context_lines2",&_argc0,&_arg1,&_arg2,&_argc3)) 
+    if(!PyArg_ParseTuple(args,"siis:sary_searcher_get_next_context_lines2",&_argc0,&_arg1,&_arg2,&_argc3)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_context_lines2. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_context_lines2. Expected _SarySearcher_p.");
         return NULL;
         }
     }
     if (_argc3) {
         if (SWIG_GetPtr(_argc3,(void **) &_arg3,"_SaryInt_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 4 of saryer_get_next_context_lines2. Expected _SaryInt_p.");
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 4 of sary_searcher_get_next_context_lines2. Expected _SaryInt_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_context_lines2(_arg0,_arg1,_arg2,_arg3);
+    _result = (gchar *)sary_searcher_get_next_context_lines2(_arg0,_arg1,_arg2,_arg3);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_tagged_region(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_tagged_region(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     gchar * _arg2;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"sss:saryer_get_next_tagged_region",&_argc0,&_arg1,&_arg2)) 
+    if(!PyArg_ParseTuple(args,"sss:sary_searcher_get_next_tagged_region",&_argc0,&_arg1,&_arg2)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_tagged_region. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_tagged_region. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_tagged_region(_arg0,_arg1,_arg2);
+    _result = (gchar *)sary_searcher_get_next_tagged_region(_arg0,_arg1,_arg2);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_tagged_region2(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_tagged_region2(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     gchar * _arg1;
     SaryInt  _arg2;
     gchar * _arg3;
@@ -964,151 +964,151 @@ static PyObject *_wrap_saryer_get_next_tagged_region2(PyObject *self, PyObject *
     char * _argc5 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"ssisis:saryer_get_next_tagged_region2",&_argc0,&_arg1,&_arg2,&_arg3,&_arg4,&_argc5)) 
+    if(!PyArg_ParseTuple(args,"ssisis:sary_searcher_get_next_tagged_region2",&_argc0,&_arg1,&_arg2,&_arg3,&_arg4,&_argc5)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_tagged_region2. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_tagged_region2. Expected _SarySearcher_p.");
         return NULL;
         }
     }
     if (_argc5) {
         if (SWIG_GetPtr(_argc5,(void **) &_arg5,"_SaryInt_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 6 of saryer_get_next_tagged_region2. Expected _SaryInt_p.");
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 6 of sary_searcher_get_next_tagged_region2. Expected _SaryInt_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_get_next_tagged_region2(_arg0,_arg1,_arg2,_arg3,_arg4,_arg5);
+    _result = (gchar *)sary_searcher_get_next_tagged_region2(_arg0,_arg1,_arg2,_arg3,_arg4,_arg5);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_get_next_occurrence(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_get_next_occurrence(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     SaryText * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
     char _ptemp[128];
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_get_next_occurrence",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_get_next_occurrence",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_get_next_occurrence. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_get_next_occurrence. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (SaryText *)saryer_get_next_occurrence(_arg0);
+    _result = (SaryText *)sary_searcher_get_next_occurrence(_arg0);
     SWIG_MakePtr(_ptemp, (char *) _result,"_SaryText_p");
     _resultobj = Py_BuildValue("s",_ptemp);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_peek_next_position(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_peek_next_position(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     gchar * _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_peek_next_position",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_peek_next_position",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_peek_next_position. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_peek_next_position. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (gchar *)saryer_peek_next_position(_arg0);
+    _result = (gchar *)sary_searcher_peek_next_position(_arg0);
     _resultobj = Py_BuildValue("s", _result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_count_occurrences(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_count_occurrences(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
     SaryInt  _result;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_count_occurrences",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_count_occurrences",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_count_occurrences. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_count_occurrences. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    _result = (SaryInt )saryer_count_occurrences(_arg0);
+    _result = (SaryInt )sary_searcher_count_occurrences(_arg0);
     _resultobj = Py_BuildValue("i",_result);
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_sort_occurrences(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_sort_occurrences(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_sort_occurrences",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_sort_occurrences",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_sort_occurrences. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_sort_occurrences. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    saryer_sort_occurrences(_arg0);
+    sary_searcher_sort_occurrences(_arg0);
     Py_INCREF(Py_None);
     _resultobj = Py_None;
     return _resultobj;
 }
 
-static PyObject *_wrap_saryer_enable_cache(PyObject *self, PyObject *args) {
+static PyObject *_wrap_sary_searcher_enable_cache(PyObject *self, PyObject *args) {
     PyObject * _resultobj;
-    Saryer * _arg0;
+    SarySearcher * _arg0;
     char * _argc0 = 0;
 
     self = self;
-    if(!PyArg_ParseTuple(args,"s:saryer_enable_cache",&_argc0)) 
+    if(!PyArg_ParseTuple(args,"s:sary_searcher_enable_cache",&_argc0)) 
         return NULL;
     if (_argc0) {
-        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_Saryer_p")) {
-            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of saryer_enable_cache. Expected _Saryer_p.");
+        if (SWIG_GetPtr(_argc0,(void **) &_arg0,"_SarySearcher_p")) {
+            PyErr_SetString(PyExc_TypeError,"Type error in argument 1 of sary_searcher_enable_cache. Expected _SarySearcher_p.");
         return NULL;
         }
     }
-    saryer_enable_cache(_arg0);
+    sary_searcher_enable_cache(_arg0);
     Py_INCREF(Py_None);
     _resultobj = Py_None;
     return _resultobj;
 }
 
 static PyMethodDef pysaryMethods[] = {
-	 { "saryer_enable_cache", _wrap_saryer_enable_cache, 1 },
-	 { "saryer_sort_occurrences", _wrap_saryer_sort_occurrences, 1 },
-	 { "saryer_count_occurrences", _wrap_saryer_count_occurrences, 1 },
-	 { "saryer_peek_next_position", _wrap_saryer_peek_next_position, 1 },
-	 { "saryer_get_next_occurrence", _wrap_saryer_get_next_occurrence, 1 },
-	 { "saryer_get_next_tagged_region2", _wrap_saryer_get_next_tagged_region2, 1 },
-	 { "saryer_get_next_tagged_region", _wrap_saryer_get_next_tagged_region, 1 },
-	 { "saryer_get_next_context_lines2", _wrap_saryer_get_next_context_lines2, 1 },
-	 { "saryer_get_next_context_lines", _wrap_saryer_get_next_context_lines, 1 },
-	 { "saryer_get_next_line2", _wrap_saryer_get_next_line2, 1 },
-	 { "saryer_get_next_line", _wrap_saryer_get_next_line, 1 },
-	 { "saryer_get_next_offset", _wrap_saryer_get_next_offset, 1 },
-	 { "saryer_get_array", _wrap_saryer_get_array, 1 },
-	 { "saryer_get_text", _wrap_saryer_get_text, 1 },
-	 { "saryer_icase_search2", _wrap_saryer_icase_search2, 1 },
-	 { "saryer_icase_search", _wrap_saryer_icase_search, 1 },
-	 { "saryer_isearch_reset", _wrap_saryer_isearch_reset, 1 },
-	 { "saryer_isearch", _wrap_saryer_isearch, 1 },
-	 { "saryer_search2", _wrap_saryer_search2, 1 },
-	 { "saryer_search", _wrap_saryer_search, 1 },
-	 { "saryer_destroy", _wrap_saryer_destroy, 1 },
-	 { "saryer_new2", _wrap_saryer_new2, 1 },
-	 { "saryer_new", _wrap_saryer_new, 1 },
+	 { "sary_searcher_enable_cache", _wrap_sary_searcher_enable_cache, 1 },
+	 { "sary_searcher_sort_occurrences", _wrap_sary_searcher_sort_occurrences, 1 },
+	 { "sary_searcher_count_occurrences", _wrap_sary_searcher_count_occurrences, 1 },
+	 { "sary_searcher_peek_next_position", _wrap_sary_searcher_peek_next_position, 1 },
+	 { "sary_searcher_get_next_occurrence", _wrap_sary_searcher_get_next_occurrence, 1 },
+	 { "sary_searcher_get_next_tagged_region2", _wrap_sary_searcher_get_next_tagged_region2, 1 },
+	 { "sary_searcher_get_next_tagged_region", _wrap_sary_searcher_get_next_tagged_region, 1 },
+	 { "sary_searcher_get_next_context_lines2", _wrap_sary_searcher_get_next_context_lines2, 1 },
+	 { "sary_searcher_get_next_context_lines", _wrap_sary_searcher_get_next_context_lines, 1 },
+	 { "sary_searcher_get_next_line2", _wrap_sary_searcher_get_next_line2, 1 },
+	 { "sary_searcher_get_next_line", _wrap_sary_searcher_get_next_line, 1 },
+	 { "sary_searcher_get_next_offset", _wrap_sary_searcher_get_next_offset, 1 },
+	 { "sary_searcher_get_array", _wrap_sary_searcher_get_array, 1 },
+	 { "sary_searcher_get_text", _wrap_sary_searcher_get_text, 1 },
+	 { "sary_searcher_icase_search2", _wrap_sary_searcher_icase_search2, 1 },
+	 { "sary_searcher_icase_search", _wrap_sary_searcher_icase_search, 1 },
+	 { "sary_searcher_isearch_reset", _wrap_sary_searcher_isearch_reset, 1 },
+	 { "sary_searcher_isearch", _wrap_sary_searcher_isearch, 1 },
+	 { "sary_searcher_search2", _wrap_sary_searcher_search2, 1 },
+	 { "sary_searcher_search", _wrap_sary_searcher_search, 1 },
+	 { "sary_searcher_destroy", _wrap_sary_searcher_destroy, 1 },
+	 { "sary_searcher_new2", _wrap_sary_searcher_new2, 1 },
+	 { "sary_searcher_new", _wrap_sary_searcher_new, 1 },
 	 { NULL, NULL }
 };
 static PyObject *SWIG_globals;
