@@ -13,7 +13,7 @@
 
 %module pysary
 %{
-#include <sary/saryer.h>
+#include <sary/searcher.h>
 #include <glib.h>
 #include <sary/mmap.h>
 #include <sary/text.h>
@@ -24,49 +24,49 @@
 typedef char gchar;
 typedef int gboolean;
 typedef int SaryInt;
-extern Saryer*         saryer_new                      (const gchar
+extern SarySearcher*         sary_searcher_new                      (const gchar
                                                  *file_name);
-extern Saryer*         saryer_new2                     (const gchar *file_name,
+extern SarySearcher*         sary_searcher_new2                     (const gchar *file_name,
                                                  const gchar *array_name);
-extern void            saryer_destroy                  (Saryer *saryer);
-extern gboolean        saryer_search                   (Saryer *saryer,
+extern void            sary_searcher_destroy                  (SarySearcher *searcher);
+extern gboolean        sary_searcher_search                   (SarySearcher *searcher,
                                                  const gchar *pattern);
-extern gboolean        saryer_search2                  (Saryer *saryer,
+extern gboolean        sary_searcher_search2                  (SarySearcher *searcher,
                                                  const gchar *pattern,
                                                  SaryInt len);
-extern gboolean        saryer_isearch                  (Saryer *saryer,
+extern gboolean        sary_searcher_isearch                  (SarySearcher *searcher,
                                                  const gchar *pattern,
                                                  SaryInt len);
-extern void            saryer_isearch_reset            (Saryer *saryer);
-extern gboolean        saryer_icase_search             (Saryer *saryer,
+extern void            sary_searcher_isearch_reset            (SarySearcher *searcher);
+extern gboolean        sary_searcher_icase_search             (SarySearcher *searcher,
                                                  const gchar *pattern);
-extern gboolean        saryer_icase_search2            (Saryer *saryer,
+extern gboolean        sary_searcher_icase_search2            (SarySearcher *searcher,
                                                  const gchar *pattern,
                                                  SaryInt len);
-extern SaryText*       saryer_get_text                 (Saryer *saryer);
-extern SaryMmap*       saryer_get_array                (Saryer *saryer);
-extern SaryInt         saryer_get_next_offset          (Saryer *saryer);
-extern gchar*          saryer_get_next_line            (Saryer *saryer);
-extern gchar*          saryer_get_next_line2           (Saryer *saryer,
+extern SaryText*       sary_searcher_get_text                 (SarySearcher *searcher);
+extern SaryMmap*       sary_searcher_get_array                (SarySearcher *searcher);
+extern SaryInt         sary_searcher_get_next_offset          (SarySearcher *searcher);
+extern gchar*          sary_searcher_get_next_line            (SarySearcher *searcher);
+extern gchar*          sary_searcher_get_next_line2           (SarySearcher *searcher,
                                                  SaryInt *len);
-extern gchar*          saryer_get_next_context_lines   (Saryer *saryer,
+extern gchar*          sary_searcher_get_next_context_lines   (SarySearcher *searcher,
                                                  SaryInt backward,
                                                  SaryInt forward);
-extern gchar*          saryer_get_next_context_lines2  (Saryer *saryer,
+extern gchar*          sary_searcher_get_next_context_lines2  (SarySearcher *searcher,
                                                  SaryInt backward,
                                                  SaryInt forward,
                                                  SaryInt *len);
-extern gchar*          saryer_get_next_tagged_region   (Saryer *saryer,
+extern gchar*          sary_searcher_get_next_tagged_region   (SarySearcher *searcher,
                                                  const gchar *start_tag,
                                                  const gchar *end_tag);
-extern gchar*          saryer_get_next_tagged_region2  (Saryer *saryer,
+extern gchar*          sary_searcher_get_next_tagged_region2  (SarySearcher *searcher,
                                                  const gchar *start_tag,
                                                  SaryInt start_tag_len,
                                                  const gchar *end_tag,
                                                  SaryInt end_tag_len,
                                                  SaryInt *len);
-extern SaryText*       saryer_get_next_occurrence      (Saryer *saryer);
-extern gchar*          saryer_peek_next_position       (Saryer *saryer);
-extern SaryInt         saryer_count_occurrences        (Saryer *saryer);
-extern void            saryer_sort_occurrences         (Saryer *saryer);
-extern void            saryer_enable_cache             (Saryer *saryer);
+extern SaryText*       sary_searcher_get_next_occurrence      (SarySearcher *searcher);
+extern gchar*          sary_searcher_peek_next_position       (SarySearcher *searcher);
+extern SaryInt         sary_searcher_count_occurrences        (SarySearcher *searcher);
+extern void            sary_searcher_sort_occurrences         (SarySearcher *searcher);
+extern void            sary_searcher_enable_cache             (SarySearcher *searcher);
